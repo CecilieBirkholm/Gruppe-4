@@ -7,33 +7,35 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!--linker til ikoner i bunden-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--link til font-->
-
+    <script src="menu.js" defer></script>
 </head>
 <body>
-    
-    <section class="header">
-        <nav>
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times"></i>
-                    <ul>
-                        <li><a href="Index4.html">Forside</a></li>
-                        <li><a href="portfolio4.html">Portfolio</a></li>
-                        <li><a href="om-mig4.html">Om mig</a></li>
-                        <li><a href="kontakt4.html">Kontakt</a></li>
-                        
-                    </ul>
-           
-            </div>
-            <i class="fa fa-bars"></i>
-        </nav>
-     
-        <div class="text-box">
-            <h1>ALEXANDRA KAMBSKARÐ SØRENSEN </h1>
-            <p>MULTIMEDIEDESIGNER</p>
-            <a href="kontakt4.html" class="kontakt-knap">Kontakt mig</a>
-         </div>
-    </section>
-    <!--kompetancer-->
+    <!--header-og-menubar-->
+    <div id="Forside2" class="tabcontent">
+        <h1>ALEXANDRA KAMBSKARÐ SØRENSEN</h1>
+        <p>Multimediedesigner.</p>
+      </div>
+      
+      <div id="Portfolio2" class="tabcontent">
+        <h1>PORTFOLIO</h1>
+        <p>Skal man skrive noget her heh.</p>
+      </div>
+      
+      <div id="Om-mig2" class="tabcontent">
+        <h1>OM MIG</h1>
+        <p>hej du.</p>
+      </div>
+      
+      <div id="Kontakt2" class="tabcontent">
+        <h1>KONTAKT</h1>
+        <p>Call me honey.</p>
+      </div>
+      
+      <button class="tablink" onclick="openCategory('Forside2', this, '#ff4b8d')" ><a href="Index4.html"></a>Forside</button>
+      <button class="tablink" onclick="openCategory('Portfolio2', this, '#fb5e98')">Portfolio</button> <a href="portfolio4.html"></a>
+      <button class="tablink" onclick="openCategory('Om-mig2', this, '#fc8bb4')">Om Mig</button>
+      <button class="tablink" onclick="openCategory('Kontakt2', this, '#fdadcb')">Kontakt</button>
+      
     <section class="kompetancer">
         <h1>Mine kompetencer</h1>
         
