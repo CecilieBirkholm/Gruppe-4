@@ -702,6 +702,11 @@ textarea:valid~label{
 
 * {box-sizing:border-box}
 
+.mySlides img {
+    width: 100%; /* Adjusts the width to fit the container */
+    height: 500px; /* Set a fixed height */
+    object-fit: contain; /* Ensures the whole image fits within the box without cropping */
+  }
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
