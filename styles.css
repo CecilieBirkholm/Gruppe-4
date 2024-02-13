@@ -827,6 +827,18 @@ textarea:valid~label{
 }
 
 /*------------------------------------Kirsten----------------------------*/
+.om-mig-side{
+    padding: 30px;
+    background-color: rgb(14, 14, 14);
+    color: white;
+}
+
+.om-mig-side.dark-mode{
+    padding: 30px;
+    background-color: white;
+    color: black;
+}
+
 .dark-mode {
     background-color: white;
     color: black;
