@@ -1,16 +1,63 @@
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY;
-    var section1Height = document.querySelector('.header-biside').offsetHeight;
-    var section2Height = section1Height + document.querySelector('.om-mig-side').offsetHeight;
+let currentPlayer = 'X';
+let cells = Array.from(document.querySelectorAll('.cell'));
+let message = document.getElementById('message');
+let gameActive = true;
 
-    if (scrollPosition < section1Height) {
-        document.body.classList.remove('section2', 'section3');
-        document.body.classList.add('section1');
-    } else if (scrollPosition >= section1Height && scrollPosition < section2Height) {
-        document.body.classList.remove('section1', 'section3');
-        document.body.classList.add('section2');
-    } else {
-        document.body.classList.remove('section1', 'section2');
-        document.body.classList.add('section3');
+function checkWinner() {
+    const winningConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    for (let condition of winningConditions) {
+        const [a, b, c] = condition;
+        if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
+            return cells[a].textContent;
+        }
     }
-});
+
+    return null;
+}
+
+function checkDraw() {
+    return cells.every(cell => cell.textContent !== '');
+}
+
+function handleResult(result) {
+    gameActive = false;
+    if (result) {
+        message.textContent = `${result} wins!`;
+    } else {
+        message.textContent = 'Draw!';
+    }
+}
+
+function cellClicked(index) {
+    if (!gameActive || cells[index].textContent !== '') return;
+
+    cells[index].textContent = currentPlayer;
+
+    const winner = checkWinner();
+    if (winner) {
+        handleResult(winner);
+    } else if (checkDraw()) {
+        handleResult(null);
+    } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+}
+
+function resetGame() {
+    currentPlayer = 'X';
+    cells.forEach(cell => {
+        cell.textContent = '';
+    });
+    message.textContent = '';
+    gameActive = true;
+}
