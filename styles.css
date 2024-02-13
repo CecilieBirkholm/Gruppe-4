@@ -827,22 +827,21 @@ textarea:valid~label{
 }
 
 /*------------------------------------Kirsten----------------------------*/
-.om-mig-side{
-    padding: 30px;
-    background-color: rgb(14, 14, 14);
-    color: white;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-.om-mig-side.dark-mode{
-    padding: 30px;
-    background-color: white;
-    color: black;
+content{
+    display: table;
+    height: 100%;
+    width: 100%;
 }
 
-.dark-mode {
-    background-color: white;
-    color: black;
-}
+
+
+
 /*--Cecilie--*/
 
 /*--Merveille--*/
