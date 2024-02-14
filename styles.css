@@ -826,6 +826,17 @@ textarea:valid~label{
   to {opacity: 1}
 }
 
+@keyframes swipeBack {
+    from {transform: translateX(0%);}
+    to {transform: translateX(-100%);}
+}
+
+@keyframes swipeEffect {
+    from {opacity: 0.4; transform: translateX(100%);}
+    to {opacity: 1; transform: translateX(0);}
+}
+
+
 /*------------------------------------Kirsten----------------------------*/
 .dark-mode {
     background-color: white;
