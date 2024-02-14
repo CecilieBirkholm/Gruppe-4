@@ -81,7 +81,7 @@ p{
     padding: 1% 1%;
     margin: 1% 1%;
 }   
-nav{
+/*--nav{
     display: flex;
     padding: 0 0 6% 0;
     justify-content: space-between;
@@ -114,6 +114,7 @@ nav{
 .nav-links ul li:hover ::after{
     width: 100%;
 }
+--*/
 
 .text-box{
     width: 90%;
@@ -146,9 +147,13 @@ nav{
     background: #ff3881;
     transition: 1s;
 }
+/*--
 nav.fa{
     display: none;
 }
+--*/
+
+
 @media(max-width: 700px){
     .text-box h1{
         font-size: 20px;
@@ -157,6 +162,7 @@ nav.fa{
     .text-box p{
         font-size: 15px;
     }
+    /*--
     .nav-links ul li{
         display: block;
     }
@@ -180,6 +186,8 @@ nav.fa{
     .nav-links ul{
         padding: 30px;
     }
+
+    --*/
     .kontakt-knap{
         font-size: 15px;
         padding: 6px 16px;
@@ -187,10 +195,11 @@ nav.fa{
 
 }
 /*--kompetancer--*/
-body{
+/*---body{
     background-color:#000000;
     width: auto;
 }
+--*/
 
 .kompetancer{
     width: 80%;
@@ -698,6 +707,7 @@ textarea:valid~label{
 }
 /*--Alexandra-header-og-menubar--*/
 /* Style the tab buttons */
+/*--
 .tablink {
     background-color: #555;
     color: white;
@@ -711,11 +721,13 @@ textarea:valid~label{
   }
   
   /* Change background color of buttons on hover */
+  /*--
   .tablink:hover {
     background-color: #3BB273;
   }
   
   /* Set default styles for tab content */
+  /*
   .tabcontent {
     color: white;
     display: none;
@@ -724,10 +736,69 @@ textarea:valid~label{
   }
   
   /* Style each tab content individually */
+  /*
   #Forside2 {background-color: #ff4b8d; }
   #Portfolio2 {background-color:#fb5e98;}
   #Om-mig2 {background-color: #fc8bb4;}
   #Kontakt2 {background-color:#fdadcb;}
+
+  /*------------------------måneskin----------------------------*/
+
+  *{
+    margin: 0;
+    padding: 0;
+
+  }
+  body{
+    background-color:#0a2a43;
+    min-height: 1500px;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section:before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0a2a43, transparent);
+    z-index: 10000;
+}
+section::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  #0a2a43;
+    z-index: 10000;
+    mix-blend-mode: color;
+}
+section img{
+    position: absolute ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+#text{
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 1;
+}
 
 
 
