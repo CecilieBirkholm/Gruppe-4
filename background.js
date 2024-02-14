@@ -1,63 +1,40 @@
-let currentPlayer = 'X';
-let cells = Array.from(document.querySelectorAll('.cell'));
-let message = document.getElementById('message');
-let gameActive = true;
+const currentDate = new Date ();
+console.log(currentDate)
+//test currentDate in browser to verify it works
 
-function checkWinner() {
-    const winningConditions = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
+const targetDate= new Date ('2025-06-20T12:00:00');
+console.log(targetDate);
 
-    for (let condition of winningConditions) {
-        const [a, b, c] = condition;
-        if (cells[a].textContent && cells[a].textContent === cells[b].textContent && cells[a].textContent === cells[c].textContent) {
-            return cells[a].textContent;
-        }
-    }
+const difference = targetDate - currentDate;
+console.log(difference);
+//Difference performs subtractions with target date and current date 
 
-    return null;
+//Update function for the countdown 
+function updateCountdown() {
+    const currentTime= new Date ();
+    const difference = targetDate - currentTime;
+
+    //mathfloor = used to round down to the nearest whole number
+    // each unit is calculated by dividing the difference by the # in miliseconds
+    // broken down to Days > Hours > Minutes > Seconds
+    //1000ms/s - 60s/min - 60min/h - 24h/day
+    const days = Math.floor(difference / (1000*60*60*24));
+    const hours = Math.floor((difference % (1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((difference % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((difference % (1000*60)) /1000);
+
+    document.getElementById("Days").innerText = days;
+    document.getElementById("Hours").innerText = hours;
+    document.getElementById("Minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
 }
 
-function checkDraw() {
-    return cells.every(cell => cell.textContent !== '');
-}
+//setInterval = function that executes a code, it updates every one second (1000ms)
+const interval = setInterval(updateCountdown, 1000);
 
-function handleResult(result) {
-    gameActive = false;
-    if (result) {
-        message.textContent = `${result} wins!`;
-    } else {
-        message.textContent = 'Draw!';
-    }
-}
 
-function cellClicked(index) {
-    if (!gameActive || cells[index].textContent !== '') return;
-
-    cells[index].textContent = currentPlayer;
-
-    const winner = checkWinner();
-    if (winner) {
-        handleResult(winner);
-    } else if (checkDraw()) {
-        handleResult(null);
-    } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    }
-}
-
-function resetGame() {
-    currentPlayer = 'X';
-    cells.forEach(cell => {
-        cell.textContent = '';
-    });
-    message.textContent = '';
-    gameActive = true;
+// clearInterval(interval) stops the countdown when it reaches your target date 
+if (difference <0) {
+    clearInterval(interval);
+    document.getElementById("timer").innerText = "Event Started";
 }
