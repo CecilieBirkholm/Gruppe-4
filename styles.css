@@ -81,7 +81,7 @@ p{
     padding: 1% 1%;
     margin: 1% 1%;
 }   
-/*--nav{
+nav{
     display: flex;
     padding: 0 0 6% 0;
     justify-content: space-between;
@@ -114,7 +114,7 @@ p{
 .nav-links ul li:hover ::after{
     width: 100%;
 }
---*/
+
 
 .text-box{
     width: 90%;
@@ -147,11 +147,10 @@ p{
     background: #ff3881;
     transition: 1s;
 }
-/*--
+
 nav.fa{
     display: none;
 }
---*/
 
 
 @media(max-width: 700px){
@@ -162,7 +161,7 @@ nav.fa{
     .text-box p{
         font-size: 15px;
     }
-    /*--
+    
     .nav-links ul li{
         display: block;
     }
@@ -187,7 +186,7 @@ nav.fa{
         padding: 30px;
     }
 
-    --*/
+
     .kontakt-knap{
         font-size: 15px;
         padding: 6px 16px;
@@ -195,11 +194,11 @@ nav.fa{
 
 }
 /*--kompetancer--*/
-/*---body{
+body{
     background-color:#000000;
     width: auto;
 }
---*/
+
 
 .kompetancer{
     width: 80%;
@@ -706,54 +705,15 @@ textarea:valid~label{
 
 }
 /*--Alexandra-header-og-menubar--*/
-/* Style the tab buttons */
-/*--
-.tablink {
-    background-color: #555;
-    color: white;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 25%;
-  }
-  
-  /* Change background color of buttons on hover */
-  /*--
-  .tablink:hover {
-    background-color: #3BB273;
-  }
-  
-  /* Set default styles for tab content */
-  /*
-  .tabcontent {
-    color: white;
-    display: none;
-    padding: 50px;
-    text-align: center;
-  }
-  
-  /* Style each tab content individually */
-  /*
-  #Forside2 {background-color: #ff4b8d; }
-  #Portfolio2 {background-color:#fb5e98;}
-  #Om-mig2 {background-color: #fc8bb4;}
-  #Kontakt2 {background-color:#fdadcb;}
-
-  /*------------------------måneskin----------------------------*/
-
   *{
     margin: 0;
     padding: 0;
 
   }
   body{
-    background-color:#0a2a43;
     min-height: 1500px;
 }
-section{
+section-head{
     position: relative;
     width: 100%;
     height: 100vh;
@@ -762,7 +722,7 @@ section{
     justify-content: center;
     align-items: center;
 }
-section:before
+section-head:before
 {
     content: '';
     position: absolute;
@@ -772,7 +732,7 @@ section:before
     background: linear-gradient(to top, #0a2a43, transparent);
     z-index: 10000;
 }
-section::after
+section-head::after
 {
     content: '';
     position: absolute;
@@ -784,7 +744,8 @@ section::after
     z-index: 10000;
     mix-blend-mode: color;
 }
-section img{
+
+section-head img{
     position: absolute ;
     top: 0;
     left: 0;
@@ -793,6 +754,7 @@ section img{
     object-fit: cover;
     pointer-events: none;
 }
+
 #text{
     position: relative;
     color: #fff;
@@ -800,6 +762,9 @@ section img{
     z-index: 1;
 }
 
+#road{
+    z-index: 2;
+}
 
 
 /*---------------------------------- Rama -----------------------------*/

@@ -1,40 +1,53 @@
-function openCategory(category, elmnt, color) {
-    // Skjul alle elementer med class="tabcontent" som standard
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-  
-// Fjern baggrundsfarven fra alle tablinks/buttons
-tablinks = document.getElementsByClassName("tablink");
-for (i = 0; i < tablinks.length; i++) {
-  tablinks[i].style.backgroundColor = "";
+
+let bg = document.getElementById("bg");
+let moon = document.getElementById("moon");
+let mountain = document.getElementById("mountain");
+let road = document.getElementById("road");
+let text = document.getElementById("text");
+
+window.addEventListener('scroll', function(){
+    var value = window.scrollY;
+
+bg.style.top = value * 0.5 + 'px';
+moon.style.left = -value * 0.5 + 'px';
+mountain.style.top = -value * 0.15 + 'px';
+road.style.top = value * 0.15 + 'px'; //dette er brug af arimetiske operatorer //
+text.style.top = value * 1 + 'px'; //dette er settings for hvordan alt skal bevæge sig når man scroller på skærmen//
+})
+
+
+function changeText() {
+  var textElement = document.getElementById("text");
+  var hour = new Date().getHours(); // Hent det aktuelle timeantal
+
+  var wordsDay = ["Skyer", "Solskin", "Varme", "Sol"];
+  var wordsNight = ["Nordlys", "Måneskin", "Stjerner", "Nattelys"]; //dette er arrays og objekter
+
+  var words; // Initialiser variabel til at holde sættet af ord
+
+  if (hour >= 18 || hour < 6) {
+      words = wordsNight; // Vælg ord til dagtimerne 
+  } else {
+      words = wordsDay; // Vælg ord til natten
+  }
+  //dette er arrays
+
+  var index = 0; // Startindeks for loopet
+
+  // Definer en funktion, der opdaterer teksten
+  function updateText() {
+      textElement.textContent = words[index];
+      index = (index + 1) % words.length; // Brug modulus for at gå tilbage til starten, når vi når slutningen
+  }
+
+  // Kald updateText() med det samme, når siden indlæses
+  updateText();
+
+  // Sæt et interval for at opdatere teksten hvert 3. sekund
+  setInterval(updateText, 3000);
 }
 
-// Vis det specifikke tabindhold baseret på kategori
-var tabId;
-switch(category) {
-  case 'Forside2':
-    tabId = 'Forside2'; // London er "forside" i dette tilfælde
-    break;
-  case 'Portfolio2':
-    tabId = 'Portfolio2'; // Paris er "portfolio"
-    break;
-  case 'Om-mig2':
-    tabId = 'Om-mig2'; // Tokyo er "om mig"
-    break;
-  case 'Kontakt2':
-    tabId = 'Kontakt2'; // Oslo er "kontakt"
-    break;
-  default:
-    tabId = 'Forside2'; // Hvis ingen gyldig kategori gives, vis forsiden som standard
-}
-document.getElementById(tabId).style.display = "block";
+// Kald changeText() med det samme, når siden indlæses
+changeText(); //jeg bruger  en lokal variabel kaldet index i min kode, den er deklareret inde i funktionen changeText(). Dette er et eksempel på brugen af lokal scope.
 
-// Tilføj den specifikke farve til knappen, der blev brugt til at åbne tabindholdet
-elmnt.style.backgroundColor = color;
-}
 
-// Klik på den knap, der er angivet som standardåbning
-document.getElementById("defaultOpen").click();
