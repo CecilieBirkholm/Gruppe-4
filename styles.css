@@ -875,11 +875,12 @@ section-head img{
 
 /*------------------------------------Kirsten----------------------------*/
 #countdown{
-    background: white;
+    background: black;
     padding: 40px 60px;
     border-radius: 15px;
-    box-shadow: #222222;
+    box-shadow: white;
     text-align: center;
+    color: white;
 }
 
 #timer{
