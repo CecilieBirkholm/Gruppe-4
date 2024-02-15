@@ -1,5 +1,5 @@
-const currentDate = new Date ();
-console.log(currentDate)
+const currentDate = new Date ('2024-03-14T08:00:00');
+console.log(currentDate);
 //test currentDate in browser to verify it works
 
 const targetDate= new Date ('2025-06-20T12:00:00');
@@ -23,9 +23,11 @@ function updateCountdown() {
     const minutes = Math.floor((difference % (1000*60*60)) / (1000*60));
     const seconds = Math.floor((difference % (1000*60)) /1000);
 
-    document.getElementById("Days").innerText = days;
-    document.getElementById("Hours").innerText = hours;
-    document.getElementById("Minutes").innerText = minutes;
+
+    //IT IS CASE SENSITIVE = DAYS STUFF NEED TO BE LOWERCASE
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
     document.getElementById("seconds").innerText = seconds;
 }
 

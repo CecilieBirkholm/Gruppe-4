@@ -213,22 +213,25 @@ body{
     justify-content: space-between;
 }
 .komp-col-grøn{
-    flex-basis: 31%;
     background: #3BB273;
+    flex-basis: 31%;
     border-radius: 10px;
-    margin-bottom: 5%;
     box-sizing: border-box;
-    transition: 0.5s;
+    margin-bottom: 5%;
+    transition: 0.5s ease-in-out;
+    transform: translate(-10%,-10%);
     text-align: justify;
     padding: 30px 20px;
-    
+    cursor: pointer;    
 }
+
 .komp-col{
     flex-basis: 31%;
     background: #222222;
     border-radius: 10px;
     margin-bottom: 5%;
     box-sizing: border-box;
+    transform: translate(-10%,-10%);
     transition: 0.5s;
     color: white;
     text-align: justify;
@@ -875,11 +878,12 @@ section-head img{
 
 /*------------------------------------Kirsten----------------------------*/
 #countdown{
-    background: white;
+    background: black;
     padding: 40px 60px;
     border-radius: 15px;
-    box-shadow: #222222;
+    box-shadow: white;
     text-align: center;
+    color: white;
 }
 
 #timer{
