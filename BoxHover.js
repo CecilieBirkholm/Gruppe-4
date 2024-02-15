@@ -1,5 +1,3 @@
-
-
 // Fejlfinding (Debugging)
 console.log('Debugging example: This message will be logged to the console.');
 
@@ -65,20 +63,3 @@ function toggleBoxPosition() {
 }
 
 document.getElementById('box').addEventListener('click', toggleBoxPosition);
-
-
-// Variables
-let isBoxClicked = false;
-
-// Function to toggle box position
-function toggleBoxPosition() {
-    const box = document.getElementById('box');
-    const newPosition = isBoxClicked ? 'translate(-10%, -10%)' : 'translate(-10%, -10%) scale(1.5)';
-    box.style.transform = newPosition;
-    isBoxClicked = !isBoxClicked;
-}
-
-// Event Listener
-document.getElementById('box').addEventListener('click', toggleBoxPosition);
-
-
