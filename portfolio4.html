@@ -7,11 +7,21 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="carousel.js" defer></script>
+    <script src="menu.js" defer></script>
 </head>
 <body>
-    
-    <section class="header-triside">
-        
+    <!--header-->
+    <section-head>
+        <img src="img/bg.jpg" id="bg">
+        <img src="img/moon.png" id="moon">
+        <img src="img/mountain.png" id="mountain">
+        <img src="img/road.png" id="road">
+        <h2 id="text"> Måneskin</h2>
+    </section-head>
+
+
+    <!--menubar-->
+       
         <nav>
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times"></i>
@@ -30,12 +40,11 @@
         <div class="text-box">
             <h1>PORTFOLIO </h1>
          </div>
-    </section>
 <!------------------------------------- start of carousel ------------------------------->
     <!-- Slideshow container -->
 <div class="slideshow-container">
 
-    <!-- Full-width images with number and caption text -->
+    <!-- The images with number at the top and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">1 / 6</div>
       <img src="img/fuglkomp.jpg" style="width:100%" alt="a digital bird">
@@ -72,13 +81,13 @@
         <div class="text">A Vase</div>
     </div>
   
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!-- Next and previous buttons/arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#8604;</a>
+    <a class="next" onclick="plusSlides(1)">&#8605;</a>
   </div>
   <br>
   
-  <!-- The dots/circles -->
+  <!-- The dots under the slide show -->
   <div style="text-align:center">
     <span class="dot" onclick="currentSlide(1)"></span> 
     <span class="dot" onclick="currentSlide(2)"></span> 
@@ -87,6 +96,9 @@
     <span class="dot" onclick="currentSlide(5)"></span> 
     <span class="dot" onclick="currentSlide(6)"></span> 
   </div>
+
+
+
  <!------------------------------------- end of carousel ------------------------------->
     <div class="portfolio-container">
         <img class="port-billede3" src="img/valde.jpg" alt="sort hvidt billede">
