@@ -51,7 +51,7 @@ function changeText() {
 changeText(); //jeg bruger  en lokal variabel kaldet index i min kode, den er deklareret inde i funktionen changeText(). Dette er et eksempel på brugen af lokal scope.
 
 // Array med ordene
-  const words = ["tak", "fordi", "du", "så", "med"];
+  const words = ["Countdown", "Till", "We", "Will", "Graduate!"];
 // Funktion til at skifte ordene i loop
   function changeWord(index) {
 // Find det aktuelle ord på skærmen
