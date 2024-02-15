@@ -30,7 +30,7 @@ function changeText() {
   } else {
       words = wordsDay; // Vælg ord til natten
   }
-  //dette er arrays
+  //dette er if-else
 
   var index = 0; // Startindeks for loopet
 
